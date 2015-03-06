@@ -7,6 +7,8 @@
 <!ENTITY RFC6150 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6150.xml">
 <!ENTITY RFC6649 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6649.xml">
 ]>
+<?rfc toc="yes"?>
+<?rfc tocdepth="2"?>
 <rfc category="info" ipr="trust200902" docName="draft-kaduk-kitten-des-des-des-die-die-die-00" submissionType="IETF" obsoletes="4757" updates="3961">
   <front>
     <title>Deprecate 3DES and RC4 in Kerberos</title>
