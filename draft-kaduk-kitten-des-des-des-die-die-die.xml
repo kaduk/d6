@@ -138,8 +138,8 @@
       <section title="Cross-Protocol Key Reuse">
 	<t>The selection of unsalted MD4 as the Kerberos string2key
 	  function was deliberate, since it allowed systems to be
-	  converted in-place from the old NTLM logon protocol [XXX]
-	  to use Kerberos.</t>
+	  converted in-place from the old NTLM logon protocol
+	  <xref target="MS-NLMP" /> to use Kerberos.</t>
 	<t>Unfortunately, there still exist systems using NTLM for
 	  authentication to applications, which can result in application
 	  servers possessing the NT password hash of user passwords.
@@ -299,6 +299,16 @@
     <references title="Informative References">
       &RFC4757;
       &RFC6649;
+      <reference anchor="MS-NLMP">
+	<front>
+	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
+	  <author>
+	    <organization>Microsoft Corporation</organization>
+	  </author>
+	  <date year="2014" month="May" />
+	</front>
+	<format type="HTML" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx" />
+      </reference>
     </references>
     <section title="Acknowledgements">
       <t>Many people have contributed to the understanding of the weaknesses
