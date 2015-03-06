@@ -16,6 +16,12 @@
         <email>kaduk@mit.edu</email>
       </address>
     </author>
+    <author fullname="Michiko Short" initials="M.S." surname="Short">
+      <organization>Microsoft Corporation</organization>
+      <address>
+        <email>michikos@microsoft.com</email>
+      </address>
+    </author>
     <date month="December" year="2014"/>
     <abstract>
       <t>The 3DES and RC4 encryption types are steadily weakening in
@@ -66,8 +72,9 @@
 	biases cause concern for any consumer of the RC4 cipher.
 	However, the RC4 Kerberos enctypes have additional flaws which
 	reduce the security of applications using them, including the
-	weakness of the password hashing algorithm and the reuse of
-	key material across protocols.</t>
+	weakness of the password hashing algorithm, the reuse of
+	key material across protocols, and the lack of a salt when
+	hashing the password.</t>
       <section title="Statistical Biases">
 	<t>The RC4 stream cipher is known to have statistical biases in
 	  its output, which have led to practical attacks against
@@ -141,6 +148,32 @@
 	  use of the long-term key/password hash was convenient for
 	  migrating to Kerberos, but now provides a vulnerability
 	  in Kerberos as NTLM continues to be used.
+	</t>
+      </section>
+      <section title="Interoperability Concerns">
+	<t>The RC4 Kerberos encryption type remains in use in many
+	  environments because of interoperability requirements -- in
+	  those sites, RC4 is the strongest enctype which allows two
+	  parties to use Kerberos to communicate.  In particular, the
+	  Kerberos implementions included with Windows XP and Windows
+	  Server 2003 support only single-DES and RC4.  Since
+	  single-DES is deprecated (<xref target="RFC6649" />),
+	  machines running those operating systems must use RC4.</t>
+	<t>Similarly, there are cross-realm situations where the
+	  cross-realm key was initially established when one peer only
+	  supported RC4, or where machines only supporting RC4 will
+	  need to obtain a cross-realm TGT.  It can be difficult to
+	  inventory all clients in a Kerberos realm and know what
+	  implementations will be used by those client principals;
+	  this leads to concerns that disabling RC4 will cause
+	  breakage on machines that are unknown to the realm
+	  administrators.</t>
+	<t>However, Windows XP is already out of its official support
+	  period, and the support period for Windows Server 2003 ends
+	  on July 14, 2015.  At that point, machines that might be
+	  broken by disabling RC4 will be unsupported, and concerns
+	  about breaking them will be reduced.  That should facilitate
+	  the removal of RC4 from common use.
 	</t>
       </section>
     </section>
