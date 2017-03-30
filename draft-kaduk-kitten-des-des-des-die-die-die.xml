@@ -172,10 +172,10 @@
 	  this leads to concerns that disabling RC4 will cause
 	  breakage on machines that are unknown to the realm
 	  administrators.</t>
-	<t>However, Windows XP is already out of its official support
-	  period, and the support period for Windows Server 2003 ends
-	  on July 14, 2015.  At that point, machines that might be
-	  broken by disabling RC4 will be unsupported, and concerns
+	<t>However, both Windows XP and Windows Server 2003 are already
+	  out of their official support periods.  It is now believed that all
+	  machines that might be
+	  broken by disabling RC4 are unsupported, and concerns
 	  about breaking them will be reduced.  That should facilitate
 	  the removal of RC4 from common use.
 	</t>
