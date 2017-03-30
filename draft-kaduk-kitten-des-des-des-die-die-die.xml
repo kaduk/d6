@@ -6,6 +6,7 @@
 <!ENTITY RFC4757 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4757.xml">
 <!ENTITY RFC6150 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6150.xml">
 <!ENTITY RFC6649 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6649.xml">
+<!ENTITY RFC7465 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7465.xml">
 ]>
 <?rfc toc="yes"?>
 <?rfc tocdepth="2"?>
@@ -70,7 +71,8 @@
     </section>
     <section title="RC4 Weakness">
       <t>RC4's weakness as a TLS cipher due to statistical biases in
-	the keystream has been well-publicized, and these statistical
+	the keystream has been well-publicized <xref target="RFC7465" />,
+	and these statistical
 	biases cause concern for any consumer of the RC4 cipher.
 	However, the RC4 Kerberos enctypes have additional flaws which
 	reduce the security of applications using them, including the
@@ -80,7 +82,7 @@
       <section title="Statistical Biases">
 	<t>The RC4 stream cipher is known to have statistical biases in
 	  its output, which have led to practical attacks against
-	  protocols using RC4, such as TLS ([XXX]).  These attacks
+	  protocols using RC4, such as TLS (<xref target="RFC7465" />).  These attacks
 	  seem to rely on repeated encryptions of thousands of copies of
 	  the same plaintext; whereas it is easy for malicious javascript
 	  in a website to cause such traffic, it is unclear that there
@@ -299,6 +301,7 @@
     <references title="Informative References">
       &RFC4757;
       &RFC6649;
+      &RFC7465;
       <reference anchor="MS-NLMP">
 	<front>
 	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
