@@ -13,7 +13,7 @@
   <front>
     <title>Deprecate 3DES and RC4 in Kerberos</title>
     <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
-      <organization abbrev="MIT KIT">MIT Consortium for Kerberos and Internet Trust</organization>
+      <organization abbrev="Akamai">Akamai Technologies</organization>
       <address>
         <email>kaduk@mit.edu</email>
       </address>
