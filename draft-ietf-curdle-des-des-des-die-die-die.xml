@@ -206,12 +206,16 @@
       </section>
       <section title="Interoperability">
 	<t>The triple-DES encryption types were implemented by
-	  MIT Kerberos early in its development, but encryption
-	  types 17 and 18 (AES) quickly followed, so there are
-	  only a small number of such deployments which support
-	  3DES but not AES.  Similarly, the Heimdal Kerberos
-	  implementation provided 3DES shortly followed by AES,
-	  and has provided AES for nearly ten years.</t>
+	  MIT Kerberos early in its development (ca. 1999) and present
+	  in the 1.2 release, but encryption
+	  types 17 and 18 (AES) were implemneted by 2003 and present
+	  in the 1.3 release.  The Heimdal Kerberos
+	  implementation also provided a version of 3DES in 1999 (though
+	  the GSSAPI portions remained non-interoperable with MIT for
+	  some time after that), and gained support for AES in 2005 with
+	  its 0.7 release.  Both Heimdal and MIT krb5 have supported
+	  the  AES enctypes for some 12 years, and it is expected that
+	  deployments that support 3DES but not AES are quite rare.</t>
 	<t>The Kerberos implementation in Microsoft Windows
 	  does not currently and has never implemented the
 	  3DES encryption type.  Support for AES was introduced
