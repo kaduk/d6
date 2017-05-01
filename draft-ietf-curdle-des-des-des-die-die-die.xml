@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC3961 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3961.xml">
+<!ENTITY RFC4120 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4120.xml">
+<!ENTITY RFC4757 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4757.xml">
+<!ENTITY RFC6150 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6150.xml">
+<!ENTITY RFC6649 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6649.xml">
+<!ENTITY RFC7465 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7465.xml">
+]>
+<?rfc toc="yes"?>
+<?rfc tocdepth="2"?>
+<rfc category="info" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-00" submissionType="IETF" obsoletes="4757" updates="3961">
+  <front>
+    <title>Deprecate 3DES and RC4 in Kerberos</title>
+    <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
+      <organization abbrev="Akamai">Akamai Technologies</organization>
+      <address>
+        <email>kaduk@mit.edu</email>
+      </address>
+    </author>
+    <author fullname="Michiko Short" initials="M.S." surname="Short">
+      <organization>Microsoft Corporation</organization>
+      <address>
+        <email>michikos@microsoft.com</email>
+      </address>
+    </author>
+    <date month="May" year="2017"/>
+    <abstract>
+      <t>The 3DES and RC4 encryption types are steadily weakening in
+	cryptographic strength, and the deprecation process should be
+	begun for their use in Kerberos.
+      </t>
+    </abstract>
+  </front>
+  <middle>
+    <section anchor="intro" title="Introduction">
+      <t>The 3DES and RC4 encryption types are steadily weakening in
+	cryptographic strength, and the deprecation process should be
+	begun for their use in Kerberos.
+      </t>
+    </section>
+    <section title="Requirements Notation">
+      <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+	NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
+	"OPTIONAL" in this document are to be interpreted as described in
+	<xref target="RFC2119" />.
+      </t>
+    </section>
+    <section title="Affected Specifications">
+      <t>The RC4 Kerberos encryption types are specified in
+	<xref target="RFC4757" />, which is moved to historic.</t>
+      <t>The des3-cbc-sha1-kd encryption type is specified in
+	<xref target="RFC3961" />.  Additional 3DES encryption types
+	are in use with no formal specification, in particular
+	des3-cbc-md5 and des3-cbc-sha1.  These unspecified encryption
+	types are also deprecated by this document.</t>
+    </section>
+    <section title="Affected Encryption Types">
+      <t>The following encryption types are deprecated.  The numbers
+	are the official identifiers; the names are only for
+	convenience.</t>
+      <texttable>
+	<ttcol align="center">enctype number</ttcol>
+	<ttcol align="center">enctype convenience name</ttcol>
+	<c>5</c><c>des3-cbc-md5</c>
+	<c>7</c><c>des3-cbc-sha1</c>
+	<c>16</c><c>des3-cbc-sha1-kd</c>
+	<c>23</c><c>rc4-hmac</c>
+      </texttable>
+    </section>
+    <section title="RC4 Weakness">
+      <t>RC4's weakness as a TLS cipher due to statistical biases in
+	the keystream has been well-publicized <xref target="RFC7465" />,
+	and these statistical
+	biases cause concern for any consumer of the RC4 cipher.
+	However, the RC4 Kerberos enctypes have additional flaws which
+	reduce the security of applications using them, including the
+	weakness of the password hashing algorithm, the reuse of
+	key material across protocols, and the lack of a salt when
+	hashing the password.</t>
+      <section title="Statistical Biases">
+	<t>The RC4 stream cipher is known to have statistical biases in
+	  its output, which have led to practical attacks against
+	  protocols using RC4, such as TLS (<xref target="RFC7465" />).  These attacks
+	  seem to rely on repeated encryptions of thousands of copies of
+	  the same plaintext; whereas it is easy for malicious javascript
+	  in a website to cause such traffic, it is unclear that there
+	  is an easy way to induce a kerberized application to generate
+	  such repeated encryptions.  The statistical biases are most
+	  pronounced for earlier bits in the output stream, which is
+	  somewhat mitigated by the use of a confounder in kerberos
+	  messages -- the first 64 bits of plaintext are a random
+	  confounder, and are thus of no use to an attacker who can
+	  retrieve them.</t>
+	<t>Nonetheless, the statistical biases in the RC4 keystream extend
+	  well past 64 bits, and provide potential attack surface to
+	  an attacker.  Continuing to use a known weak algorithm is
+	  inviting further development of attacks.</t>
+      </section>
+      <section title="Password Hash">
+	<t>Kerberos long-term keys can either be random (as might be
+	  used in a service's keytab) or derived from a password
+	  (usable for individual users to authenticate to a system).
+	  The specification for a Kerberos encryption type must include
+	  a "string2key" algorithm for generating a raw crypto key
+	  from a string (i.e., password).  Modern encryption types
+	  such as those using the AES and Camellia block ciphers use
+	  a string2key function based on the PBKDF2 algorithm, which
+	  involves many iterations of a cryptographic hash function,
+	  designed to increase the computational effort required to
+	  perform a brute-force password-guessing attack.  There is
+	  an additional option to specify an increased iteration count
+	  for a given principal, providing some modicum of adaptability
+	  for increases in computing power.</t>
+	<t>It is also best practice when deriving cryptographic secrets
+	  from user passwords, to include a value which is unique to
+	  both the user and the realm of authentication as input to the
+	  has function; this user-specific input is known as a "salt".
+	  The default salt for Kerberos principals includes both the
+	  name of the principal and the name of the realm, in accordance
+	  with these best practices.  However, the RC4 encryption types
+	  ignore the salt input to the string2key function, which is
+	  a single iteration of the MD4 HMAC function applied to the
+	  UTF-16 encoded password, with no salt at all.
+	  The MD4 hash function is very old, and is considered to be
+	  weak and unsuitable for new cryptographic applications
+	  at this time. <xref target="RFC6150" /></t>
+	<t>The omission of a salt input to the hash is contrary to
+	  cryptographic best practices, and allows an attacker to
+	  construct a "rainbow table" of password hashes, which are
+	  applicable to all principals in all Kerberos realms.  Given
+	  the prevalance of poor-quality user-selected password, it
+	  is likely that a rainbow table derived from a database of
+	  common passwords would be able to compromise a sizable number
+	  of Kerberos principals in any realm using RC4 encryption types
+	  for password-derived keys.
+	</t>
+      </section>
+      <section title="Cross-Protocol Key Reuse">
+	<t>The selection of unsalted MD4 as the Kerberos string2key
+	  function was deliberate, since it allowed systems to be
+	  converted in-place from the old NTLM logon protocol
+	  <xref target="MS-NLMP" /> to use Kerberos.</t>
+	<t>Unfortunately, there still exist systems using NTLM for
+	  authentication to applications, which can result in application
+	  servers possessing the NT password hash of user passwords.
+	  Because the RC4 string2key was chosen to be compatible with
+	  the NTLM scheme, this means that these application servers
+	  also possess the long-term Kerberos key for those users
+	  (even though the password is unknown).  The cross-protocol
+	  use of the long-term key/password hash was convenient for
+	  migrating to Kerberos, but now provides a vulnerability
+	  in Kerberos as NTLM continues to be used.
+	</t>
+      </section>
+      <section title="Interoperability Concerns">
+	<t>The RC4 Kerberos encryption type remains in use in many
+	  environments because of interoperability requirements -- in
+	  those sites, RC4 is the strongest enctype which allows two
+	  parties to use Kerberos to communicate.  In particular, the
+	  Kerberos implementions included with Windows XP and Windows
+	  Server 2003 support only single-DES and RC4.  Since
+	  single-DES is deprecated (<xref target="RFC6649" />),
+	  machines running those operating systems must use RC4.</t>
+	<t>Similarly, there are cross-realm situations where the
+	  cross-realm key was initially established when one peer only
+	  supported RC4, or where machines only supporting RC4 will
+	  need to obtain a cross-realm TGT.  It can be difficult to
+	  inventory all clients in a Kerberos realm and know what
+	  implementations will be used by those client principals;
+	  this leads to concerns that disabling RC4 will cause
+	  breakage on machines that are unknown to the realm
+	  administrators.</t>
+	<t>However, both Windows XP and Windows Server 2003 are already
+	  out of their official support periods.  It is now believed that all
+	  machines that might be
+	  broken by disabling RC4 are unsupported, and concerns
+	  about breaking them will be reduced.  That should facilitate
+	  the removal of RC4 from common use.
+	</t>
+      </section>
+    </section>
+    <section title="3DES Weakness">
+      <t>The flaws in triple-DES as used for Kerberos are not quite
+	as damning as those in RC4, but there is still ample justification
+	for deprecating their use.  As is the case for the RC4 enctypes,
+	the string2key algorithm is weak.  Additionally, the 3DES
+	encryption types were never implemented in all Kerberos
+	implementations, and the 64-bit blocksize may be problematic
+	in some environments.</t>
+      <section title="Password-based Keys">
+	<t>The string2key function used by the des-cbc-sha1-kd
+	  encryption type is essentially just the same n-fold
+	  algorithm used by the single-DES family of enctypes.
+	  It is known to not provide effective mixing of the
+	  input bits, and is computationally easy to evaluate.
+	  As such, it does not slow down brute-force attacks in
+	  the way that the computationally demanding PBKDF2
+	  algorithm used by more modern encryption types does.
+	  The salt is used by des-cbc-sha1-kd's string2key,
+	  in contrast to RC4, but a brute-force
+	  dictionary attack on common passwords may still be
+	  feasible.
+	</t>
+      </section>
+      <section title="Interoperability">
+	<t>The triple-DES encryption types were implemented by
+	  MIT Kerberos early in its development, but encryption
+	  types 17 and 18 (AES) quickly followed, so there are
+	  only a small number of such deployments which support
+	  3DES but not AES.  Similarly, the Heimdal Kerberos
+	  implementation provided 3DES shortly followed by AES,
+	  and has provided AES for nearly ten years.</t>
+	<t>The Kerberos implementation in Microsoft Windows
+	  does not currently and has never implemented the
+	  3DES encryption type.  Support for AES was introduced
+	  with Windows Vista and Windows Server 2008; older
+	  versions such as Windows XP and Windows Server 2003
+	  only supported the RC4 encryption types.</t>
+	<t>The 3DES encryption type offers very slow encryption,
+	  especially compared to the performance of AES using
+	  the hardware accelleration available in modern CPUs.
+	  There are no areas where it offers advantages over
+	  other encryption types except in the rare case where
+	  AES is not available.
+	</t>
+      </section>
+      <section title="Block Size">
+	<t>Because triple-DES is based on the single-DES primitive,
+	  just using additional key material and nested encryption,
+	  it inherits the 64-bit cipher block size from single-DES.
+	  As a result, an attacker who can collect approximately
+	  2**32 blocks of ciphertext has a good chance of finding
+	  a cipher block collision (the "birthday attack"), which
+	  would potentially reveal a couple blocks of plaintext.</t>
+	<t>A cipher block collision would not necessarily cause the
+	  key itself to be leaked, so the plaintext revealed by
+	  such a collision would be limited.  For some sites, that
+	  may be an acceptable risk, but it is still considered
+	  a weakness in the encryption type.
+	</t>
+      </section>
+    </section>
+    <section title="Recommendations">
+      <t>This document hereby removes the following RECOMMENDED types from
+	<xref target="RFC4120" />:
+	<list style="hanging">
+	  <t hangText="Encryption:">DES3-CBC-SHA1-KD</t>
+	  <t hangText="Checksum:">HMAC-SHA1-DES3-KD</t>
+	</list>
+      </t>
+      <t>Kerberos implementations and deployments SHOULD NOT implement
+	or deploy the following triple-DES encryption types:
+	DES3-CBC-MD5(5), DES3-CBC-SHA1(7), and DES3-CBC-SHA1-KD(16)
+	(updates <xref target="RFC4120" />).</t>
+      <t>Kerberos implementations and deployments SHOULD NOT implement
+	or deploy the RC4 encryption type RC4-HMAC(23).</t>
+      <t>Kerberos implementations and deployments SHOULD NOT implement
+	or deploy the following checksum types: RSA-MD5(7),
+	RSA-MD5-DES3(9), HMAC-SHA1-DES3-KD(12), and HMAC-SHA1-DES3(13)
+	(updates <xref target="RFC4120" />).</t>
+      <t>Kerberos GSS mechanism implementations and deployments
+	SHOULD NOT implement or deploy the following SGN_ALGs:
+	HMAC MD5(1100) and HMAC SHA1 DES3 KD (updates
+	<xref target="RFC4757" />).</t>
+      <t>Kerberos GSS mechanism implementations and deployments
+	SHOULD NOT implement or deploy the following SEAL_ALGs:
+	RC4(1000) and DES3KD(0400).</t>
+      <t>This document recommends the reclassification of
+	<xref target="RFC4757" /> as Historic.
+      </t>
+    </section>
+    <section title="Security Considerations">
+      <t>This document is entirely about security considerations,
+	namely that the use of the 3DES and RC4 Kerberos encryption types
+	is not secure, and they should not be used.
+      </t>
+    </section>
+    <section title="IANA Considerations">
+      <t>IANA is requested to update the registry of Kerberos
+	Encryption Type Numbers to note that encryption types 1, 2, 3, and
+	24 are deprecated, with RFC 6649 (<xref target="RFC6649" />)
+	as the reference, and that encryption types 5, 7, 16, and 23
+	are deprecated, with this document as the reference.</t>
+      <t>Similarly, IANA Is requested to update the registry of
+	Kerberos Checksum Type Numbers to note that checksum types 1, 2, 3, 4,
+	5, 6, and 8 are deprecated, with RFC 6649 as the reference,
+	and that checksum types 7, 12, and 13 are deprecated, with this
+	document as the reference.
+      </t>
+    </section>
+  </middle>
+  <back>
+    <references title="Normative References">
+      &RFC2119;
+      &RFC3961;
+      &RFC4120;
+      &RFC6150;
+    </references>
+    <references title="Informative References">
+      &RFC4757;
+      &RFC6649;
+      &RFC7465;
+      <reference anchor="MS-NLMP">
+	<front>
+	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
+	  <author>
+	    <organization>Microsoft Corporation</organization>
+	  </author>
+	  <date year="2014" month="May" />
+	</front>
+	<format type="HTML" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx" />
+      </reference>
+    </references>
+    <section title="Acknowledgements">
+      <t>Many people have contributed to the understanding of the weaknesses
+	of these encryption types over the years, and they cannot all be
+	named here.
+      </t>
+    </section>
+  </back>
+</rfc>
