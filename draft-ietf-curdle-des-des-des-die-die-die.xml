@@ -190,15 +190,15 @@
 	implementations, and the 64-bit blocksize may be problematic
 	in some environments.</t>
       <section title="Password-based Keys">
-	<t>The string2key function used by the des-cbc-sha1-kd
-	  encryption type is essentially just the same n-fold
-	  algorithm used by the single-DES family of enctypes.
+	<t>The n-fold-based string2key function used by the des3-cbc-sha1-kd
+	  encryption type is an ad-hoc construction that should not be
+	  considered cryptographically sound.
 	  It is known to not provide effective mixing of the
 	  input bits, and is computationally easy to evaluate.
 	  As such, it does not slow down brute-force attacks in
 	  the way that the computationally demanding PBKDF2
 	  algorithm used by more modern encryption types does.
-	  The salt is used by des-cbc-sha1-kd's string2key,
+	  The salt is used by des3-cbc-sha1-kd's string2key,
 	  in contrast to RC4, but a brute-force
 	  dictionary attack on common passwords may still be
 	  feasible.
