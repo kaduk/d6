@@ -29,7 +29,10 @@
     <abstract>
       <t>The 3DES and RC4 encryption types are steadily weakening in
 	cryptographic strength, and the deprecation process should be
-	begun for their use in Kerberos.
+	begun for their use in Kerberos.  Accordingly, RFC 4757 is moved
+	to Obsolete status, as none of the encryption types it specifies
+	should be used, and RFC 3961 is updated to note the deprecation
+	of the triple-DES encryption types.
       </t>
     </abstract>
   </front>
@@ -37,7 +40,10 @@
     <section anchor="intro" title="Introduction">
       <t>The 3DES and RC4 encryption types are steadily weakening in
 	cryptographic strength, and the deprecation process should be
-	begun for their use in Kerberos.
+	begun for their use in Kerberos.  Accordingly, RFC 4757 is moved
+	to Obsolete status, as none of the encryption types it specifies
+	should be used, and RFC 3961 is updated to note the deprecation
+	of the triple-DES encryption types.
       </t>
     </section>
     <section title="Requirements Notation">
