@@ -210,6 +210,21 @@
 	  feasible.
 	</t>
       </section>
+      <section title="Block Size">
+	<t>Because triple-DES is based on the single-DES primitive,
+	  just using additional key material and nested encryption,
+	  it inherits the 64-bit cipher block size from single-DES.
+	  As a result, an attacker who can collect approximately
+	  2**32 blocks of ciphertext has a good chance of finding
+	  a cipher block collision (the "birthday attack"), which
+	  would potentially reveal a couple blocks of plaintext.</t>
+	<t>A cipher block collision would not necessarily cause the
+	  key itself to be leaked, so the plaintext revealed by
+	  such a collision would be limited.  For some sites, that
+	  may be an acceptable risk, but it is still considered
+	  a weakness in the encryption type.
+	</t>
+      </section>
       <section title="Interoperability">
 	<t>The triple-DES encryption types were implemented by
 	  MIT Kerberos early in its development (ca. 1999) and present
@@ -234,21 +249,6 @@
 	  There are no areas where it offers advantages over
 	  other encryption types except in the rare case where
 	  AES is not available.
-	</t>
-      </section>
-      <section title="Block Size">
-	<t>Because triple-DES is based on the single-DES primitive,
-	  just using additional key material and nested encryption,
-	  it inherits the 64-bit cipher block size from single-DES.
-	  As a result, an attacker who can collect approximately
-	  2**32 blocks of ciphertext has a good chance of finding
-	  a cipher block collision (the "birthday attack"), which
-	  would potentially reveal a couple blocks of plaintext.</t>
-	<t>A cipher block collision would not necessarily cause the
-	  key itself to be leaked, so the plaintext revealed by
-	  such a collision would be limited.  For some sites, that
-	  may be an acceptable risk, but it is still considered
-	  a weakness in the encryption type.
 	</t>
       </section>
     </section>
