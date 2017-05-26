@@ -122,7 +122,7 @@
 	<t>It is also best practice when deriving cryptographic secrets
 	  from user passwords, to include a value which is unique to
 	  both the user and the realm of authentication as input to the
-	  has function; this user-specific input is known as a "salt".
+	  hash function; this user-specific input is known as a "salt".
 	  The default salt for Kerberos principals includes both the
 	  name of the principal and the name of the realm, in accordance
 	  with these best practices.  However, the RC4 encryption types
@@ -172,7 +172,7 @@
 	<t>Similarly, there are cross-realm situations where the
 	  cross-realm key was initially established when one peer only
 	  supported RC4, or where machines only supporting RC4 will
-	  need to obtain a cross-realm TGT.  It can be difficult to
+	  need to obtain a cross-realm Ticket-Granting Ticket.  It can be difficult to
 	  inventory all clients in a Kerberos realm and know what
 	  implementations will be used by those client principals;
 	  this leads to concerns that disabling RC4 will cause
