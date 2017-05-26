@@ -110,8 +110,8 @@
 	  (usable for individual users to authenticate to a system).
 	  The specification for a Kerberos encryption type must include
 	  a "string2key" algorithm for generating a raw crypto key
-	  from a string (i.e., password).  Modern encryption types
-	  such as those using the AES and Camellia block ciphers use
+	  from a string (i.e., password).  Modern encryption types,
+	  such as those using the AES and Camellia block ciphers, use
 	  a string2key function based on the PBKDF2 algorithm, which
 	  involves many iterations of a cryptographic hash function,
 	  designed to increase the computational effort required to
@@ -119,7 +119,7 @@
 	  an additional option to specify an increased iteration count
 	  for a given principal, providing some modicum of adaptability
 	  for increases in computing power.</t>
-	<t>It is also best practice when deriving cryptographic secrets
+	<t>It is also best practice, when deriving cryptographic secrets
 	  from user passwords, to include a value which is unique to
 	  both the user and the realm of authentication as input to the
 	  hash function; this user-specific input is known as a "salt".
@@ -152,9 +152,9 @@
 	  authentication to applications, which can result in application
 	  servers possessing the NT password hash of user passwords.
 	  Because the RC4 string2key was chosen to be compatible with
-	  the NTLM scheme, this means that these application servers
+	  the NTLM scheme, these application servers
 	  also possess the long-term Kerberos key for those users
-	  (even though the password is unknown).  The cross-protocol
+	  even though the password is unknown.  The cross-protocol
 	  use of the long-term key/password hash was convenient for
 	  migrating to Kerberos, but now provides a vulnerability
 	  in Kerberos as NTLM continues to be used.
@@ -169,7 +169,7 @@
 	  Server 2003 support only single-DES and RC4.  Since
 	  single-DES is deprecated (<xref target="RFC6649" />),
 	  machines running those operating systems must use RC4.</t>
-	<t>Similarly, there are cross-realm situations where the
+	<t>Similarly, there are cross-realm deployments where the
 	  cross-realm key was initially established when one peer only
 	  supported RC4, or where machines only supporting RC4 will
 	  need to obtain a cross-realm Ticket-Granting Ticket.  It can be difficult to
@@ -190,10 +190,10 @@
     <section title="3DES Weakness">
       <t>The flaws in triple-DES as used for Kerberos are not quite
 	as damning as those in RC4, but there is still ample justification
-	for deprecating their use.  As is the case for the RC4 enctypes,
+	for deprecating its use.  As is the case for the RC4 enctypes,
 	the string2key algorithm is weak.  Additionally, the 3DES
 	encryption types were never implemented in all Kerberos
-	implementations, and the 64-bit blocksize may be problematic
+	implementations, and the 64-bit block size may be problematic
 	in some environments.</t>
       <section title="Password-based Keys">
 	<t>The n-fold-based string2key function used by the des3-cbc-sha1-kd
