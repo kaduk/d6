@@ -289,12 +289,14 @@
     </section>
     <section title="IANA Considerations">
       <t>IANA is requested to update the registry of Kerberos
-	Encryption Type Numbers to note that encryption types 1, 2, 3, and
+	Encryption Type Numbers <xref target="RFC3961" />
+	to note that encryption types 1, 2, 3, and
 	24 are deprecated, with RFC 6649 (<xref target="RFC6649" />)
 	as the reference, and that encryption types 5, 7, 16, and 23
 	are deprecated, with this document as the reference.</t>
       <t>Similarly, IANA Is requested to update the registry of
-	Kerberos Checksum Type Numbers to note that checksum types 1, 2, 3, 4,
+	Kerberos Checksum Type Numbers <xref target="RFC3961" />
+	to note that checksum types 1, 2, 3, 4,
 	5, 6, and 8 are deprecated, with RFC 6649 as the reference,
 	and that checksum types 7, 12, and 13 are deprecated, with this
 	document as the reference.
