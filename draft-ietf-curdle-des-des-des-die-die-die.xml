@@ -289,13 +289,13 @@
     </section>
     <section title="IANA Considerations">
       <t>IANA is requested to update the registry of Kerberos
-	Encryption Type Numbers <xref target="RFC3961" />
+	Encryption Type Numbers <xref target="IANA-KRB" />
 	to note that encryption types 1, 2, 3, and
 	24 are deprecated, with RFC 6649 (<xref target="RFC6649" />)
 	as the reference, and that encryption types 5, 7, 16, and 23
 	are deprecated, with this document as the reference.</t>
       <t>Similarly, IANA Is requested to update the registry of
-	Kerberos Checksum Type Numbers <xref target="RFC3961" />
+	Kerberos Checksum Type Numbers <xref target="IANA-KRB" />
 	to note that checksum types 1, 2, 3, 4,
 	5, 6, and 8 are deprecated, with RFC 6649 as the reference,
 	and that checksum types 7, 12, and 13 are deprecated, with this
@@ -323,6 +323,16 @@
 	  <date year="2014" month="May" />
 	</front>
 	<format type="HTML" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx" />
+      </reference>
+      <reference anchor="IANA-KRB">
+	<front>
+	  <title>IANA Kerberos Parameters Registry</title>
+	  <author>
+	    <organization>Internet Assigned Numbers Authority</organization>
+	  </author>
+	  <date year="2017" month="March" />
+	</front>
+	<format type="HTML" target="https://www.iana.org/assignments/kerberos-parameters/kerberos-parameters.xhtml" />
       </reference>
     </references>
     <section title="Acknowledgements">
