@@ -178,13 +178,17 @@
 	  this leads to concerns that disabling RC4 will cause
 	  breakage on machines that are unknown to the realm
 	  administrators.</t>
-	<t>However, both Windows XP and Windows Server 2003 are already
-	  out of their official support periods.  It is now believed that all
-	  machines that might be
-	  broken by disabling RC4 are unsupported, and concerns
-	  about breaking them will be reduced.  That should facilitate
-	  the removal of RC4 from common use.
-	</t>
+	<t>Fortuntately, modern (i.e., supported) Kerberos implementations
+	  support a secure alternative to RC4, in the form of AES.  Windows has
+	  supported AES since 2007-2008 with the release of Windows Vista and
+	  Server 2008, respectively; MIT Kerberos has fully supported AES
+	  (including the GSSAPI mechanism) since 2004 with the release of
+	  version 1.3.2; Heimdal has fully supported AES since 2005 with the
+	  release of version 0.7.  Though there may still be issues running
+	  ten-year-old unsupported software in mixed environments with new
+	  software, issues of that sort seem unlikely to be unique to Kerberos,
+	  and the aministrators of such environments are expected to be capable
+	  of devising workarounds.</t>
       </section>
     </section>
     <section title="3DES Weakness">
