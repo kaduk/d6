@@ -312,12 +312,12 @@
       &RFC2119;
       &RFC3961;
       &RFC4120;
-      &RFC6150;
     </references>
     <references title="Informative References">
       &RFC4757;
       &RFC6649;
       &RFC7465;
+      &RFC6150;
       <reference anchor="MS-NLMP" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx">
 	<front>
 	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
