@@ -181,14 +181,14 @@
 	<t>Fortuntately, modern (i.e., supported) Kerberos implementations
 	  support a secure alternative to RC4, in the form of AES.  Windows has
 	  supported AES since 2007-2008 with the release of Windows Vista and
-	  Server 2008, respectively; MIT Kerberos has fully supported AES
-	  (including the GSSAPI mechanism) since 2004 with the release of
-	  version 1.3.2; Heimdal has fully supported AES since 2005 with the
-	  release of version 0.7.  Though there may still be issues running
-	  ten-year-old unsupported software in mixed environments with new
-	  software, issues of that sort seem unlikely to be unique to Kerberos,
-	  and the aministrators of such environments are expected to be capable
-	  of devising workarounds.</t>
+	  Server 2008, respectively; MIT Kerberos <xref target="MITKRB5" /> has
+	  fully supported AES (including the GSSAPI mechanism) since 2004 with
+	  the release of version 1.3.2; Heimdal <xref target="HEIMDAL" /> has
+	  fully supported AES since 2005 with the release of version 0.7.
+	  Though there may still be issues running ten-year-old unsupported
+	  software in mixed environments with new software, issues of that sort
+	  seem unlikely to be unique to Kerberos, and the aministrators of such
+	  environments are expected to be capable of devising workarounds.</t>
       </section>
     </section>
     <section title="3DES Weakness">
@@ -337,6 +337,26 @@
 	  <date year="2017" month="March" />
 	</front>
 	<format type="HTML" target="https://www.iana.org/assignments/kerberos-parameters/kerberos-parameters.xhtml" />
+      </reference>
+      <reference anchor="MITKRB5">
+	<front>
+	  <title>MIT Kerberos Implementation</title>
+	  <author>
+	    <organization>MIT</organization>
+	  </author>
+	  <date year="2017" month="March" />
+	</front>
+	<format type="HTML" target="https://web.mit.edu/kerberos/" />
+      </reference>
+      <reference anchor="HEIMDAL">
+	<front>
+	  <title>Heimdal Kerberos Implementation</title>
+	  <author>
+	    <organization>Heimdal Project</organization>
+	  </author>
+	  <date year="2017" month="April" />
+	</front>
+	<format type="HTML" target="https://www.h5l.org/" />
       </reference>
     </references>
     <section title="Acknowledgements">
