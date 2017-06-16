@@ -318,7 +318,7 @@
       &RFC4757;
       &RFC6649;
       &RFC7465;
-      <reference anchor="MS-NLMP">
+      <reference anchor="MS-NLMP" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx">
 	<front>
 	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
 	  <author>
@@ -326,9 +326,8 @@
 	  </author>
 	  <date year="2014" month="May" />
 	</front>
-	<format type="HTML" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx" />
       </reference>
-      <reference anchor="IANA-KRB">
+      <reference anchor="IANA-KRB" target="https://www.iana.org/assignments/kerberos-parameters/kerberos-parameters.xhtml">
 	<front>
 	  <title>IANA Kerberos Parameters Registry</title>
 	  <author>
@@ -336,9 +335,8 @@
 	  </author>
 	  <date year="2017" month="March" />
 	</front>
-	<format type="HTML" target="https://www.iana.org/assignments/kerberos-parameters/kerberos-parameters.xhtml" />
       </reference>
-      <reference anchor="MITKRB5">
+      <reference anchor="MITKRB5" target="https://web.mit.edu/kerberos/">
 	<front>
 	  <title>MIT Kerberos Implementation</title>
 	  <author>
@@ -346,9 +344,8 @@
 	  </author>
 	  <date year="2017" month="March" />
 	</front>
-	<format type="HTML" target="https://web.mit.edu/kerberos/" />
       </reference>
-      <reference anchor="HEIMDAL">
+      <reference anchor="HEIMDAL" target="https://www.h5l.org/">
 	<front>
 	  <title>Heimdal Kerberos Implementation</title>
 	  <author>
@@ -356,7 +353,6 @@
 	  </author>
 	  <date year="2017" month="April" />
 	</front>
-	<format type="HTML" target="https://www.h5l.org/" />
       </reference>
     </references>
     <section title="Acknowledgements">
