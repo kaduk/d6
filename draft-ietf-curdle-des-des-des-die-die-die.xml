@@ -10,7 +10,7 @@
 ]>
 <?rfc toc="yes"?>
 <?rfc tocdepth="2"?>
-<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-02" submissionType="IETF" obsoletes="4757" updates="3961">
+<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-03" submissionType="IETF" obsoletes="4757" updates="3961">
   <front>
     <title>Deprecate 3DES and RC4 in Kerberos</title>
     <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
