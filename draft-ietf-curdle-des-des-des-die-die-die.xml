@@ -178,7 +178,7 @@
 	  this leads to concerns that disabling RC4 will cause
 	  breakage on machines that are unknown to the realm
 	  administrators.</t>
-	<t>Fortuntately, modern (i.e., supported) Kerberos implementations
+	<t>Fortunately, modern (i.e., supported) Kerberos implementations
 	  support a secure alternative to RC4, in the form of AES.  Windows has
 	  supported AES since 2007-2008 with the release of Windows Vista and
 	  Server 2008, respectively; MIT Kerberos <xref target="MITKRB5" /> has
