@@ -127,7 +127,7 @@
 	  name of the principal and the name of the realm, in accordance
 	  with these best practices.  However, the RC4 encryption types
 	  ignore the salt input to the string2key function, which is
-	  a single iteration of the MD4 HMAC function applied to the
+	  a single iteration of the MD4 hash function applied to the
 	  UTF-16 encoded password, with no salt at all.
 	  The MD4 hash function is very old, and is considered to be
 	  weak and unsuitable for new cryptographic applications
@@ -221,7 +221,7 @@
 	  As a result, an attacker who can collect approximately
 	  2**32 blocks of ciphertext has a good chance of finding
 	  a cipher block collision (the "birthday attack"), which
-	  would potentially reveal a couple blocks of plaintext.</t>
+	  would potentially reveal a couple of blocks of plaintext.</t>
 	<t>A cipher block collision would not necessarily cause the
 	  key itself to be leaked, so the plaintext revealed by
 	  such a collision would be limited.  For some sites, that
