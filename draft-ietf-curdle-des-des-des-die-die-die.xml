@@ -88,8 +88,9 @@
       <section title="Statistical Biases">
 	<t>The RC4 stream cipher is known to have statistical biases in
 	  its output, which have led to practical attacks against
-	  protocols using RC4, such as TLS (<xref target="RFC7465" />).  These attacks
-	  seem to rely on repeated encryptions of thousands of copies of
+	  protocols using RC4, such as TLS (<xref target="RFC7465" />).
+	  At least some of these attacks rely on
+	  repeated encryptions of thousands of copies of
 	  the same plaintext; whereas it is easy for malicious javascript
 	  in a website to cause such traffic, it is unclear that there
 	  is an easy way to induce a kerberized application to generate
@@ -196,7 +197,7 @@
 	as damning as those in RC4, but there is still ample justification
 	for deprecating its use.  As is the case for the RC4 enctypes,
 	the string2key algorithm is weak.  Additionally, the 3DES
-	encryption types were never implemented in all Kerberos
+	encryption types were not implemented in all Kerberos
 	implementations, and the 64-bit block size may be problematic
 	in some environments.</t>
       <section title="Password-based Keys">
@@ -232,7 +233,7 @@
       <section title="Interoperability">
 	<t>The triple-DES encryption types were implemented by
 	  MIT Kerberos early in its development (ca. 1999) and present
-	  in the 1.2 release, but encryption
+	  in the 1.2 release, but were superseded when encryption
 	  types 17 and 18 (AES) were implemented by 2003 and present
 	  in the 1.3 release.  The Heimdal Kerberos
 	  implementation also provided a version of 3DES in 1999 (though
