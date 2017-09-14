@@ -10,7 +10,7 @@
 ]>
 <?rfc toc="yes"?>
 <?rfc tocdepth="2"?>
-<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-04" submissionType="IETF" obsoletes="4757" updates="3961,4120">
+<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-04" submissionType="IETF" updates="3961,4120">
   <front>
     <title>Deprecate 3DES and RC4 in Kerberos</title>
     <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
@@ -30,7 +30,7 @@
       <t>The 3DES and RC4 encryption types are steadily weakening in
 	cryptographic strength, and the deprecation process should be
 	begun for their use in Kerberos.  Accordingly, RFC 4757 is moved
-	to Obsolete status, as none of the encryption types it specifies
+	to Historic status, as none of the encryption types it specifies
 	should be used, and RFC 3961 is updated to note the deprecation
 	of the triple-DES encryption types.
       </t>
@@ -41,7 +41,7 @@
       <t>The 3DES and RC4 encryption types are steadily weakening in
 	cryptographic strength, and the deprecation process should be
 	begun for their use in Kerberos.  Accordingly, RFC 4757 is moved
-	to Obsolete status, as none of the encryption types it specifies
+	to Historic status, as none of the encryption types it specifies
 	should be used, and RFC 3961 is updated to note the deprecation
 	of the triple-DES encryption types.
       </t>
@@ -61,6 +61,9 @@
 	are in use with no formal specification, in particular
 	des3-cbc-md5 and des3-cbc-sha1.  These unspecified encryption
 	types are also deprecated by this document.</t>
+      <t>Though the RC4 and 3DES encryption types are still in use in
+	some deployments, the above status changes are made to discourage
+	their use.</t>
     </section>
     <section title="Affected Encryption Types">
       <t>The following encryption types are deprecated.  The numbers
