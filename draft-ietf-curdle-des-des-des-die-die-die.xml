@@ -10,7 +10,7 @@
 ]>
 <?rfc toc="yes"?>
 <?rfc tocdepth="2"?>
-<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-04" submissionType="IETF" updates="3961,4120">
+<rfc category="bcp" ipr="trust200902" docName="draft-ietf-curdle-des-des-des-die-die-die-05" submissionType="IETF" updates="3961,4120">
   <front>
     <title>Deprecate 3DES and RC4 in Kerberos</title>
     <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
@@ -25,7 +25,7 @@
         <email>michikos@microsoft.com</email>
       </address>
     </author>
-    <date month="July" year="2017"/>
+    <date month="September" year="2017"/>
     <abstract>
       <t>The 3DES and RC4 encryption types are steadily weakening in
 	cryptographic strength, and the deprecation process should be
