@@ -140,7 +140,7 @@
 	  cryptographic best practices, and allows an attacker to
 	  construct a "rainbow table" of password hashes, which are
 	  applicable to all principals in all Kerberos realms.  Given
-	  the prevalance of poor-quality user-selected password, it
+	  the prevalence of poor-quality user-selected password, it
 	  is likely that a rainbow table derived from a database of
 	  common passwords would be able to compromise a sizable number
 	  of Kerberos principals in any realm using RC4 encryption types
@@ -169,7 +169,7 @@
 	  environments because of interoperability requirements -- in
 	  those sites, RC4 is the strongest enctype which allows two
 	  parties to use Kerberos to communicate.  In particular, the
-	  Kerberos implementions included with Windows XP and Windows
+	  Kerberos implementations included with Windows XP and Windows
 	  Server 2003 support only single-DES and RC4.  Since
 	  single-DES is deprecated (<xref target="RFC6649" />),
 	  machines running those operating systems must use RC4.</t>
@@ -191,7 +191,7 @@
 	  fully supported AES since 2005 with the release of version 0.7.
 	  Though there may still be issues running ten-year-old unsupported
 	  software in mixed environments with new software, issues of that sort
-	  seem unlikely to be unique to Kerberos, and the aministrators of such
+	  seem unlikely to be unique to Kerberos, and the administrators of such
 	  environments are expected to be capable of devising workarounds.</t>
       </section>
     </section>
@@ -253,7 +253,7 @@
 	  only supported the RC4 encryption types.</t>
 	<t>The 3DES encryption type offers very slow encryption,
 	  especially compared to the performance of AES using
-	  the hardware accelleration available in modern CPUs.
+	  the hardware acceleration available in modern CPUs.
 	  There are no areas where it offers advantages over
 	  other encryption types except in the rare case where
 	  AES is not available.
