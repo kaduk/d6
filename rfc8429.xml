@@ -37,19 +37,6 @@
 <keyword>GSS</keyword>
 
     <abstract>
-<!--[rfced] Section 7 uses the phrase "updates [RFC4757]".  We suggest
-clarifying the text to avoid confusion with the "Updates"
-relationship between RFCs. Is the following accurate?
-
-Original:
-  Kerberos GSS mechanism implementations and deployments SHOULD NOT
-  implement or deploy the following SGN_ALGs: HMAC MD5(1100) and HMAC
-  SHA1 DES3 KD (updates [RFC4757]).
-
-Perhaps:
-  Kerberos GSS mechanism implementations and deployments SHOULD NOT
-  implement or deploy the following SGN_ALGs: HMAC MD5(1100) and HMAC
-  SHA1 DES3 KD.  (Hence, [RFC4757] has been made Historic by this document.)-->
 
 <!--[rfced] This document uses both "3DES" and "triple-DES". May we
 update to use 3DES throughout?  -->
@@ -351,8 +338,8 @@ in the 1.3 release.
 	(updates <xref target="RFC3961" /> and <xref target="RFC4120" />).</t>
       <t>Kerberos GSS mechanism implementations and deployments
 	SHOULD NOT implement or deploy the following SGN_ALGs:
-	HMAC MD5(1100) and HMAC SHA1 DES3 KD (updates
-	<xref target="RFC4757" />).</t>
+	HMAC MD5(1100) and HMAC SHA1 DES3 KD.  (With all its content now deprecated,
+        <xref target="RFC4757"/> has been made Historic by this document.)</t>
       <t>Kerberos GSS mechanism implementations and deployments
 	SHOULD NOT implement or deploy the following SEAL_ALGs:
       RC4(1000) and DES3KD(0400).</t>
