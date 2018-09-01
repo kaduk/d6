@@ -353,21 +353,13 @@
       &RFC7465;
       &RFC6150;
 
-<!--[rfced] This reference includes a date of May 2014. Is this to refer to a
-specific version?
-
-[MS-NLMP]  Microsoft Corporation, "[MS-NLMP]: NT LAN Manager (NTLM)
-Authentication Protocol", May 2014,
-<https://msdn.microsoft.com/en-us/library/cc236621.aspx>.
---> 
-
       <reference anchor="MS-NLMP" target="https://msdn.microsoft.com/en-us/library/cc236621.aspx">
 	<front>
 	  <title abbrev="NTLM Authentication Protocol">[MS-NLMP]: NT LAN Manager (NTLM) Authentication Protocol</title>
 	  <author>
 	    <organization>Microsoft Corporation</organization>
 	  </author>
-	  <date year="2014" month="May" />
+	  <date year="2017" month="September" />
 	</front>
       </reference>
       <reference anchor="IANA-KRB" target="https://www.iana.org/assignments/kerberos-parameters/">
