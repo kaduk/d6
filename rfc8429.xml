@@ -209,7 +209,7 @@ encyptype)?  We note the other enctypes from the table in Section
 	<t>Unfortunately, there still exist systems using NTLM for
 	  authentication to applications, which can result in application
 	  servers possessing the NT password hash of user passwords.
-	  Because the RC4 string2key was chosen to be compatible with
+	  Because the RC4 string2key function was chosen to be compatible with
 	  the NTLM scheme, these application servers
 	  also possess the long-term Kerberos key for those users,
 	  even though the password is unknown.  The cross-protocol
@@ -267,7 +267,7 @@ encyptype)?  We note the other enctypes from the table in Section
 	  As such, it does not slow down brute-force attacks in
 	  the way that the computationally demanding PBKDF2
 	  algorithm used by more modern encryption types does.
-	  The salt is used by des3-cbc-sha1-kd's string2key,
+	  The salt is used by des3-cbc-sha1-kd's string2key function,
 	  in contrast to RC4, but a brute-force
 	  dictionary attack on common passwords may still be
 	  feasible.
