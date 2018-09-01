@@ -333,31 +333,10 @@
 	are deprecated, with this document as the reference.</t>
       <t>Similarly, IANA has updated the 
 	"Kerberos Checksum Type Numbers" registry <xref target="IANA-KRB" />
-	to note that 1) checksum types 1, 2, 3, 4,
+	to note that 1) checksum type values 1, 2, 3, 4,
 	5, 6, and 8 are deprecated, with <xref target="RFC6649"/> as the reference,
-	and that 2) checksum types 7, 12, and 13 are deprecated, with this
+	and that 2) checksum type values 7, 12, and 13 are deprecated, with this
 	document as the reference.
-
-<!--[rfced] Should the use of "checksum types" be made "sumtype
-values" in this text (as the Checksum type appears to be the name
-not the value at
-https://www.iana.org/assignments/kerberos-parameters/kerberos-parameters.xhtml#kerberos-parameters-2)?
-
-Original:
-   Similarly, IANA is requested to update the registry of Kerberos
-   Checksum Type Numbers [IANA-KRB] to note that checksum types 1, 2, 3,
-   4, 5, 6, and 8 are deprecated, with RFC 6649 as the reference, and
-   that checksum types 7, 12, and 13 are deprecated, with this document
-   as the reference.
-
-Perhaps:
-   Similarly, IANA has updated the 
-   "Kerberos Checksum Type Numbers" registry [IANA-KRB]
-   to note that 1) sumtype values 1, 2, 3, 4,
-   5, 6, and 8 are deprecated, with [RFC6649] as the reference,
-   and that 2) sumtype values 7, 12, and 13 are deprecated, with this
-   document as the reference.
--->
       </t>
     </section>
   </middle>
