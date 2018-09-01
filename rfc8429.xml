@@ -33,11 +33,8 @@
     </author>
     <date month="July" year="2018"/>
 
-<!-- [rfced] Please insert any keywords (beyond those that appear in 
-the title) for use on https://www.rfc-editor.org/search.
-
-<keyword>example</keyword>
--->
+<keyword>GSS-API</keyword>
+<keyword>GSS</keyword>
 
     <abstract>
 <!--[rfced] Per the header, this document updates RFCs 3961 and 4120,
