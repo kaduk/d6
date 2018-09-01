@@ -263,28 +263,10 @@
       </section>
       <section title="Interoperability Concerns">
 
-<!-- [rfced] We had some trouble parsing this text.  Please review our
- edits and confirm that we have captured your intent.
-
-ORIGINAL:
-The triple-DES encryption types were implemented by
-MIT Kerberos early in its development (ca. 1999) and present
-in the 1.2 release, but were superseded when encryption
-types 17 and 18 (AES) were implemented by 2003 and present
-in the 1.3 release.
-
-Edited:
-The triple-DES encryption types were implemented by
-MIT Kerberos early in its development (ca. 1999) and present
-in the 1.2 release, but they were superseded when encryption
-types 17 and 18 (AES) were implemented (by 2003) and were present
-in the 1.3 release.
--->
-
 	<t>The triple-DES encryption types were implemented by
 	  MIT Kerberos early in its development (ca. 1999) and present
 	  in the 1.2 release, but they were superseded when encryption
-	  types 17 and 18 (AES) were implemented (by 2003) and were present
+	  types 17 and 18 (AES) were implemented (by 2003); the AES enctypes were present
 	  in the 1.3 release. The Heimdal Kerberos
 	  implementation also provided a version of triple-DES in 1999 (though
 	  the GSSAPI portions remained non-interoperable with MIT for
