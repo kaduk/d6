@@ -77,7 +77,7 @@ update to use 3DES throughout?  -->
   </front>
   <middle>
     <section anchor="intro" title="Introduction">
-      <t>The Triple DES (3DES) and RC4 encryption types are steadily weakening in
+      <t>The Triple DES (3DES) and RC4 encryption types (enctypes) are steadily weakening in
 	cryptographic strength, and the deprecation process should begin for their use in Kerberos.  Accordingly, RFC 4757 has been moved
 	to Historic status, as none of the encryption types it specifies
 	should be used, and RFC 3961 has been updated to note the deprecation
