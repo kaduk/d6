@@ -288,7 +288,7 @@ encyptype)?  We note the other enctypes from the table in Section
 	  a weakness in the encryption type.
 	</t>
       </section>
-      <section title="Interoperability">
+      <section title="Interoperability Concerns">
 
 <!-- [rfced] We had some trouble parsing this text.  Please review our
  edits and confirm that we have captured your intent.
