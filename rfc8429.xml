@@ -323,7 +323,7 @@ in the 1.3 release.
 	  3DES encryption type.  Support for AES was introduced
 	  with Windows Vista and Windows Server 2008; older
 	  versions such as Windows XP and Windows Server 2003
-	  only supported the RC4 encryption types.</t>
+	  only supported the RC4 and single-DES encryption types.</t>
 	<t>The 3DES encryption type offers very slow encryption,
 	  especially compared to the performance of AES using
 	  the hardware acceleration available in modern CPUs.
