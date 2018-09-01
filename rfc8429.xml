@@ -98,8 +98,8 @@ update to use 3DES throughout?  -->
       <t>The RC4 Kerberos encryption types are specified in
 	<xref target="RFC4757" />, which has been moved to Historic.</t>
       <t>The des3-cbc-sha1-kd encryption type is specified in
-	<xref target="RFC3961" />.  Additional 3DES encryption types
-	are in the IANA registry with no formal specification, in particular
+	<xref target="RFC3961" />.  Additional 3DES encryption type codepoints
+	are in use and in the IANA registry with no formal specification, in particular
 	des3-cbc-md5 and des3-cbc-sha1.  These unspecified encryption
       types are also deprecated by this document.</t>
 
