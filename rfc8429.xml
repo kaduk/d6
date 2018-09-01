@@ -37,13 +37,6 @@
 <keyword>GSS</keyword>
 
     <abstract>
-<!--[rfced] Per the header, this document updates RFCs 3961 and 4120,
-but the Abstract currently only mentions the former. Should the
-relationship to RFC 4120 be included in the Abstract (and
-Introduction as they are identical) as well? If so, please
-provide the desired text. Please also consider updates necessary to Section
-3 "Affected Specifications" to describe this relationship.-->
-
 <!--[rfced] Section 7 uses the phrase "updates [RFC4757]".  We suggest
 clarifying the text to avoid confusion with the "Updates"
 relationship between RFCs. Is the following accurate?
@@ -68,7 +61,9 @@ update to use 3DES throughout?  -->
       should begin for their use in Kerberos.  Accordingly, RFC 4757
       has been moved to Historic status, as none of the encryption types it
       specifies should be used, and RFC 3961 has been updated to note the
-      deprecation of the triple-DES encryption types.
+      deprecation of the triple-DES encryption types.  RFC 4120 is likewise updated
+      to remove the recommendation to implement triple-DES encryption and checksum
+      types.
       </t>
     </abstract>
   </front>
@@ -78,7 +73,9 @@ update to use 3DES throughout?  -->
 	cryptographic strength, and the deprecation process should begin for their use in Kerberos.  Accordingly, RFC 4757 has been moved
 	to Historic status, as none of the encryption types it specifies
 	should be used, and RFC 3961 has been updated to note the deprecation
-	of the triple-DES encryption types.
+	of the triple-DES encryption types.  RFC 4120 is likewise updated
+        to remove the recommendation to implement triple-DES encryption and checksum
+        types.
       </t>
     </section>
     <section title="Requirements Notation">
@@ -99,6 +96,10 @@ update to use 3DES throughout?  -->
 	are in use and in the IANA registry with no formal specification, in particular
 	des3-cbc-md5 and des3-cbc-sha1.  These unspecified encryption
       types are also deprecated by this document.</t>
+      <t>The Kerberos specification (<xref target="RFC4120"/>) includes
+	recommendations for which encryption and checksum types to implement;
+	the deprecated encryption and checksum types are now disrecommended to
+	implement.</t>
 
 <!--[rfced] Should the rc4-hmac enctype specifically be mentioned in
 Section 3 (or is "RC4 Kerberos encryption types" covering this
