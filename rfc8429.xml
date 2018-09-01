@@ -372,17 +372,7 @@
 	</front>
       </reference>
 
-<!--[rfced] The URL originally provided for the [MITKRB5] reference returned a
-"certificate error". Please confirm that the updated URL is correct.
-
-Original:
-https://web.mit.edu/kerberos/
-
-Updated:
-web.mit.edu/kerberos/
---> 
-
-      <reference anchor="MITKRB5" target="web.mit.edu/kerberos/">
+      <reference anchor="MITKRB5" target="https://web.mit.edu/kerberos/">
 	<front>
 	  <title>Kerberos: The Network Authentication Protocol</title>
 	  <author>
