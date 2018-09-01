@@ -18,7 +18,7 @@
      updates="3961, 4120" consensus="yes">
 
   <front>
-    <title abbrev="Deprecate 3DES and RC4 in Kerberos">Deprecate Triple DES (3DES) and RC4 in Kerberos</title>
+    <title abbrev="Deprecate 3DES and RC4 in Kerberos">Deprecate Triple-DES (3DES) and RC4 in Kerberos</title>
     <author initials="B." surname="Kaduk" fullname="Benjamin Kaduk">
       <organization abbrev="Akamai">Akamai Technologies</organization>
       <address>
@@ -37,13 +37,7 @@
 <keyword>GSS</keyword>
 
     <abstract>
-
-<!--[rfced] This document uses both "3DES" and "triple-DES". May we
-update to use 3DES throughout?  -->
-
-
-
-      <t>The Triple DES (3DES) and RC4 encryption types are steadily
+      <t>The triple-DES (3DES) and RC4 encryption types are steadily
       weakening in cryptographic strength, and the deprecation process
       should begin for their use in Kerberos.  Accordingly, RFC 4757
       has been moved to Historic status, as none of the encryption types it
@@ -56,7 +50,7 @@ update to use 3DES throughout?  -->
   </front>
   <middle>
     <section anchor="intro" title="Introduction">
-      <t>The Triple DES (3DES) and RC4 encryption types (enctypes) are steadily weakening in
+      <t>The triple-DES (3DES) and RC4 encryption types (enctypes) are steadily weakening in
 	cryptographic strength, and the deprecation process should begin for their use in Kerberos.  Accordingly, RFC 4757 has been moved
 	to Historic status, as none of the encryption types it specifies
 	should be used, and RFC 3961 has been updated to note the deprecation
@@ -79,7 +73,7 @@ update to use 3DES throughout?  -->
       <t>The RC4 Kerberos encryption types are specified in
 	<xref target="RFC4757" />, which has been moved to Historic.</t>
       <t>The des3-cbc-sha1-kd encryption type is specified in
-	<xref target="RFC3961" />.  Additional 3DES encryption type codepoints
+	<xref target="RFC3961" />.  Additional triple-DES encryption type codepoints
 	are in use and in the IANA registry with no formal specification, in particular
 	des3-cbc-md5 and des3-cbc-sha1.  These unspecified encryption
       types are also deprecated by this document.</t>
@@ -94,7 +88,7 @@ encyptype)?  We note the other enctypes from the table in Section
 4 are each called out there. -->
 
       
-      <t>Though the RC4 and 3DES encryption types are still in use in
+      <t>Though the RC4 and triple-DES encryption types are still in use in
 	some deployments, the above status changes are made to discourage
 	their use.</t>
     </section>
@@ -235,11 +229,11 @@ encyptype)?  We note the other enctypes from the table in Section
 	  environments are expected to be capable of devising workarounds.</t>
       </section>
     </section>
-    <section title="3DES Weakness">
+    <section title="Triple-DES Weakness">
       <t>The flaws in triple-DES as used for Kerberos are not quite
 	as damning as those in RC4, but there is still ample justification
 	for deprecating its use.  As is the case for the RC4 enctypes,
-	the string2key algorithm is weak.  Additionally, the 3DES
+	the string2key algorithm is weak.  Additionally, the triple-DES
 	encryption types were not implemented in all Kerberos
 	implementations, and the 64-bit block size may be problematic
 	in some environments.</t>
@@ -298,21 +292,21 @@ in the 1.3 release.
 	  in the 1.2 release, but they were superseded when encryption
 	  types 17 and 18 (AES) were implemented (by 2003) and were present
 	  in the 1.3 release. The Heimdal Kerberos
-	  implementation also provided a version of 3DES in 1999 (though
+	  implementation also provided a version of triple-DES in 1999 (though
 	  the GSSAPI portions remained non-interoperable with MIT for
 	  some time after that), gaining support for AES in 2005 with
 	  its 0.7 release.  Both Heimdal and MIT krb5 have supported
 	  the  AES enctypes for some 12 years, and it is expected that
-	  deployments that support 3DES but not AES are quite rare.</t>
+	  deployments that support triple-DES but not AES are quite rare.</t>
 	<t>The Kerberos implementation in Microsoft Windows has never implemented the
-	  3DES encryption type.  Support for AES was introduced
+	  triple-DES encryption type.  Support for AES was introduced
 	  with Windows Vista and Windows Server 2008; older
 	  versions such as Windows XP and Windows Server 2003
 	  only supported the RC4 and single-DES encryption types.</t>
-	<t>The 3DES encryption type offers very slow encryption,
+	<t>The triple-DES encryption type offers very slow encryption,
 	  especially compared to the performance of AES using
 	  the hardware acceleration available in modern CPUs.
-	  There are no areas where 3DES offers advantages over
+	  There are no areas where triple-DES offers advantages over
 	  other encryption types except in the rare case where
 	  AES is not available.
 	</t>
@@ -350,7 +344,7 @@ in the 1.3 release.
     </section>
     <section title="Security Considerations">
       <t>This document is entirely about security considerations,
-	namely that the use of the 3DES and RC4 Kerberos encryption types
+	namely that the use of the triple-DES and RC4 Kerberos encryption types
 	is not secure, and they should not be used.
       </t>
     </section>
