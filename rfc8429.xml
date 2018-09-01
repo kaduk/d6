@@ -70,7 +70,7 @@
 
     </section>
     <section title="Affected Specifications">
-      <t>The RC4 Kerberos encryption types are specified in
+      <t>The RC4 Kerberos encryption types (including rc4-hmac) are specified in
 	<xref target="RFC4757" />, which has been moved to Historic.</t>
       <t>The des3-cbc-sha1-kd encryption type is specified in
 	<xref target="RFC3961" />.  Additional triple-DES encryption type codepoints
@@ -82,12 +82,6 @@
 	the deprecated encryption and checksum types are now disrecommended to
 	implement.</t>
 
-<!--[rfced] Should the rc4-hmac enctype specifically be mentioned in
-Section 3 (or is "RC4 Kerberos encryption types" covering this
-encyptype)?  We note the other enctypes from the table in Section
-4 are each called out there. -->
-
-      
       <t>Though the RC4 and triple-DES encryption types are still in use in
 	some deployments, the above status changes are made to discourage
 	their use.</t>
