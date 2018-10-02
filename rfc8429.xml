@@ -110,7 +110,8 @@
 	and these statistical
 	biases cause concern for any consumer of the RC4 cipher.
 	However, the RC4 Kerberos enctypes have additional flaws. These flaws
-	reduce the security of applications that use the enctypes in various ways including the
+	reduce the security of applications that use the enctypes;
+	the weakening ocurs for various reasons, including the
 	weakness of the password hashing algorithm, the reuse of
 	key material across protocols, and the lack of a salt when
 	hashing the password.</t>
