@@ -166,7 +166,7 @@
 	  at this time <xref target="RFC6150" />.</t>
 	<t>The omission of a salt input to the hash is contrary to
 	  cryptographic best practices and allows an attacker to
-	  construct construct a "rainbow table" of password hashes; such tables are
+	  construct a "rainbow table" of password hashes; such tables are
 	  applicable to all principals in all Kerberos realms.  Given
 	  the prevalence of poor-quality user-selected passwords, it
 	  is likely that a rainbow table derived from a database of
