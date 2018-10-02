@@ -31,7 +31,7 @@
         <email>michikos@microsoft.com</email>
       </address>
     </author>
-    <date month="July" year="2018"/>
+    <date month="September" year="2018"/>
 
 <keyword>GSS-API</keyword>
 <keyword>GSS</keyword>
@@ -109,8 +109,8 @@
 	the keystream has been well publicized <xref target="RFC7465" />,
 	and these statistical
 	biases cause concern for any consumer of the RC4 cipher.
-	However, the RC4 Kerberos enctypes have additional flaws which
-	reduce the security of applications using them, including the
+	However, the RC4 Kerberos enctypes have additional flaws. These flaws
+	reduce the security of applications that use the enctypes in various ways including the
 	weakness of the password hashing algorithm, the reuse of
 	key material across protocols, and the lack of a salt when
 	hashing the password.</t>
@@ -165,7 +165,7 @@
 	  at this time <xref target="RFC6150" />.</t>
 	<t>The omission of a salt input to the hash is contrary to
 	  cryptographic best practices and allows an attacker to
-	  construct a "rainbow table" of password hashes which are
+	  construct construct a "rainbow table" of password hashes; such tables are
 	  applicable to all principals in all Kerberos realms.  Given
 	  the prevalence of poor-quality user-selected passwords, it
 	  is likely that a rainbow table derived from a database of
