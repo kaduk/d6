@@ -71,7 +71,7 @@
     </section>
     <section title="Affected Specifications">
       <t>The RC4 Kerberos encryption types (including rc4-hmac) are specified in
-	<xref target="RFC4757" />, which has been moved to Historic.</t>
+	<xref target="RFC4757" />, which has been moved to Historic status.</t>
       <t>The des3-cbc-sha1-kd encryption type is specified in
 	<xref target="RFC3961" />.  Additional triple-DES encryption type codepoints
 	are in use and in the IANA registry with no formal specification, in particular
