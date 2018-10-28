@@ -309,11 +309,11 @@
 	(updates <xref target="RFC3961" /> and <xref target="RFC4120" />).</t>
       <t>Kerberos GSS mechanism implementations and deployments
 	SHOULD NOT implement or deploy the following SGN_ALGs:
-	HMAC MD5(1100) and HMAC SHA1 DES3 KD.  (With all its content now deprecated,
+	HMAC MD5(1100) and HMAC SHA1 DES3 KD(0400).  (With all its content now deprecated,
         <xref target="RFC4757"/> has been made Historic by this document.)</t>
       <t>Kerberos GSS mechanism implementations and deployments
 	SHOULD NOT implement or deploy the following SEAL_ALGs:
-      RC4(1000) and DES3KD(0400).</t>
+      RC4(1000) and DES3KD(0200).</t>
 
       <t>Per this document,
 	<xref target="RFC4757" />  has been reclassified as Historic.
